@@ -42,6 +42,26 @@ For more detailed two-page description of LFI for Arm64 and x86-64, please see t
 
 LFI's current sandboxing schemes for Arm64 and x86-64 are documented in the [LFI specification](https://www.scs.stanford.edu/~zyedidia/docs/lfi/lfi-spec.pdf).
 
+# Example
+
+After installing the LFI compiler (see [lfi-llvm-toolchain](https://github.com/lfi-project/lfi-llvm-toolchain) for details) and installing the LFI runtime (see [lfi-runtime](https://github.com/lfi-project/lfi-runtime)), you can build and run your first LFI program.
+
+```c
+#include <stdio.h>
+int main() {
+    printf("Hello from LFI\n");
+    return 0;
+}
+```
+
+Compile:
+
+```
+$ aarch64-lfi-linux-musl-clang hello.c -O2 -o hello -static-pie
+$ lfi-run -v hello
+Hello from LFI
+```
+
 # Publications
 
 The following papers describe the LFI scheme in more detail. The first describes the Arm64 scheme, and the second describes an optimization for x86-64 that we use. For more details about the x86-64 mechanism see the [short paper](https://www.scs.stanford.edu/~zyedidia/docs/papers/lfi-short.pdf) as well as prior work on [Google Native Client](https://www.scs.stanford.edu/~zyedidia/docs/papers/nacl2.pdf).
