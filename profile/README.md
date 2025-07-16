@@ -10,6 +10,8 @@ Welcome to the home of the LFI (Lightweight Fault Isolation) project. This organ
 * `llvm-project`: our development fork of the LLVM project.
 * `lfi-specification`: the LaTeX sources for the LFI specification document.
 
+See https://github.com/zyedidia/lfi for the older research repository, where we also keep various experimental features. That repository will be moved/merged into this organization in the future.
+
 # What is LFI?
 
 LFI (Lightweight Fault Isolation) is a performant and secure software
