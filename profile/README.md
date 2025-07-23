@@ -2,7 +2,6 @@
 
 Welcome to the home of the Lightweight Fault Isolation (LFI) project. The
 project is hosted on GitHub in the https://github.com/lfi-project organization.
-This repository contains information and tutorials about how to use LFI.
 
 The GitHub organization has several repositories for the different components of LFI:
 
@@ -13,10 +12,6 @@ The GitHub organization has several repositories for the different components of
 * [`lfi-llvm-toolchain`](https://github.com/lfi-project/lfi-llvm-toolchain): scripts for building an LLVM-based LFI compiler toolchain, along with a sysroot including compiler-rt, musl, libc++, and mimalloc.
 * [`llvm-project`](https://github.com/lfi-project/llvm-project): our development fork of the LLVM project.
 * [`lfi-specification`](https://github.com/lfi-project/lfi-specification): the LaTeX sources for the LFI specification document.
-
-As a research project, the LFI implementation initially existed in the
-https://github.com/zyedidia/lfi repository. See the `lfi-research` branch of
-this repository for that version.
 
 # What is LFI?
 
