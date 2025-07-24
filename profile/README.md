@@ -4,27 +4,36 @@ Welcome to the home of the Lightweight Fault Isolation (LFI) project.
 
 # What is LFI?
 
-LFI is a system for sandboxing native code. Like [WebAssembly](https://webassembly.org/)  and [Native Client](https://en.wikipedia.org/wiki/Google_Native_Client), 
-LFI isolates sandboxed code in-process--i.e. in the same address space as a host application. At present, we support ARM64 and X86-64 targets, RISC-V support 
-is experimental.
+LFI is a system for sandboxing native code. Like
+[WebAssembly](https://webassembly.org/)  and [Native
+Client](https://en.wikipedia.org/wiki/Google_Native_Client), LFI isolates
+sandboxed code in-process (i.e., in the same address space as a host
+application). At present, we support Arm64 and x86-64 targets, and have
+experimental RISC-V support.
 
-LFI is designed from the ground up to sandbox existing code - such as C/C++ libraries (including Assembly Code) and device drivers. 
+LFI is designed from the ground up to sandbox existing code, such as C/C++
+libraries (including assembly code) and device drivers. 
 
 LFI aims for the following goals:
 
-- Compatibility: LFI can be used to sandbox nearly all existing C/C++/assembly code unmodified, works with existing system call interfaces, etc.
+- Compatibility: LFI can be used to sandbox nearly all existing C/C++/assembly
+  code unmodified, works with existing system call interfaces, etc.
 - Performance: LFI aims for minimal overhead vs. unsandboxed code.
-- Security: we aim to keep the LFI runtime and compiler elements simple and verifiable when possible. 
-- Usability: we aim to provide tools that make it as easy as possible retrofit sandboxing in existing code.
+- Security: The LFI runtime and compiler elements aim to be simple and
+  verifiable when possible. 
+- Usability: The tools should make it as easy as possible to retrofit
+  sandboxing in existing code.
    
-Non-Goals include a stable binary format and platform independeance. To wit--we will use whatever hardware features and compiler techniques
-we can to improve performance.
+Non-goals include a stable binary format and platform independence. We will use
+whatever architecture-specific hardware features and compiler techniques we can
+to improve performance.
 
-LFI  currently imposes around 7% (Arm64) or 8% (x86-64) overhead compared to native code
-when sandboxing reads and writes, and 1.5% (Arm64) to 6% (x86-64) overhead when
-only sandboxing writes (Geomean on SPEC 2017).  LFI context switches (i.e. between sandbox 
-and host application take only 10s of cycles.) And LFI can support thousands of sandboxes in a
-single address space: ~64K (Arm64) or ~3K (x86-64), with each sandbox given up to 4GiB of memory. 
+LFI currently imposes around 7% (Arm64) or 8% (x86-64) overhead compared to
+native code when sandboxing reads and writes, and 1.5% (Arm64) or 6% (x86-64)
+overhead when only sandboxing writes (geomean on SPEC 2017). LFI context
+switches (i.e. between sandbox and host application) take only 10s of cycles,
+and LFI can support thousands of sandboxes in a single address space: ~64K
+(Arm64) or ~3K (x86-64), with each sandbox given up to 4GiB of memory. 
 
 # Repositories
 
