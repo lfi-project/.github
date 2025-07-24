@@ -103,6 +103,6 @@ information.
 After building and running your first LFI program, you may want to pursue
 several further directions. See the following guides for some suggestions:
 
-* Setting up benchmarking with SPEC 2017 and `lfi-bench`: [guide](docs/BENCHMARKING.md).
-* Using LFI to sandbox libraries: [guide](docs/LIBRARIES.md).
-* Learning more about how LFI works: [guide](docs/DETAILS.md).
+* Setting up benchmarking with SPEC 2017 and `lfi-bench`: [guide](https://github.com/zyedidia/lfi/blob/landing-page/docs/BENCHMARKING.md).
+* Using LFI to sandbox libraries: [guide](https://github.com/zyedidia/lfi/blob/landing-page/docs/LIBRARIES.md).
+* Learning more about how LFI works: [guide](https://github.com/zyedidia/lfi/blob/landing-page/docs/DETAILS.md).
