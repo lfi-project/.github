@@ -1,9 +1,32 @@
 # Lightweight Fault Isolation (LFI)
 
-Welcome to the home of the Lightweight Fault Isolation (LFI) project. The
-project is hosted on GitHub in the https://github.com/lfi-project organization.
+Welcome to the home of the Lightweight Fault Isolation (LFI) project. 
 
-The GitHub organization has several repositories for the different components of LFI:
+# What is LFI?
+
+LFI is a system for sandboxing native code. Like [WebAssembly](https://webassembly.org/)  and [Native Client](https://en.wikipedia.org/wiki/Google_Native_Client), 
+LFI isolates sandboxed code in-process--i.e. in the same address space as a host application. At present, we support ARM64 and X86-64 targets, RISC-V support 
+is experimental.
+
+LFI is designed from the ground up to sandbox existing code - such as C/C++ libraries (including Assembly Code) and device drivers. 
+
+LFI aims for the following goals:
+
+- Compatibility: LFI can be used to sandbox nearly all existing C/C++/assembly code unmodified, works with existing system call interfaces, etc.
+- Performance: LFI aims for minimal overhead vs. unsandboxed code.
+- Security: we aim to keep the LFI runtime and compiler elements simple and verifiable when possible. 
+- Usability: we aim to provide tools that make it as easy as possible retrofit sandboxing in existing code.
+   
+Non-Goals include a stable binary format and platform independeance. To wit--we will use whatever hardware features and compiler techniques
+we can to improve performance.
+
+LFI  currently imposes around 7% (Arm64) or 8% (x86-64) overhead compared to native code
+when sandboxing reads and writes, and 1.5% (Arm64) to 6% (x86-64) overhead when
+only sandboxing writes (Geomean on SPEC 2017).  LFI context switches (i.e. between sandbox 
+and host application take only 10s of cycles.) And LFI can support thousands of sandboxes in a
+single address space: ~64K (Arm64) or ~3K (x86-64), with each sandbox given up to 4GiB of memory. 
+
+# Repositories
 
 * [`lfi-runtime`](https://github.com/lfi-project/lfi-runtime): the runtime responsible for loading LFI programs, handling host calls, and running verification.
 * [`lfi-verifier`](https://github.com/lfi-project/lfi-verifier): the LFI verifier.
@@ -12,20 +35,7 @@ The GitHub organization has several repositories for the different components of
 * [`lfi-llvm-toolchain`](https://github.com/lfi-project/lfi-llvm-toolchain): scripts for building an LLVM-based LFI compiler toolchain, along with a sysroot including compiler-rt, musl, libc++, and mimalloc.
 * [`llvm-project`](https://github.com/lfi-project/llvm-project): our development fork of the LLVM project.
 * [`lfi-specification`](https://github.com/lfi-project/lfi-specification): the LaTeX sources for the LFI specification document.
-
-# What is LFI?
-
-LFI (Lightweight Fault Isolation) is a performant and secure software
-sandboxing system targeting the Arm64 and x86-64 architectures. LFI allows you
-to run ~64K (Arm64) or ~3K (x86-64) sandboxes in a single address space while
-guaranteeing that the sandboxes cannot read or write each other's memory. Each
-sandbox may be given up to 4GiB of memory. These sandboxes are very efficient:
-they run with roughly 7% (Arm64)/8% (x86-64) overhead compared to native code
-when sandboxing reads and writes, and 1.5% (Arm64)/6% (x86-64) overhead when
-only sandboxing writes, measured on SPEC 2017. Since all sandboxes exist in the
-same address space, context switches do not require changing the CPU's
-privilege level (i.e., transitioning to kernel mode) and take only 10s of
-cycles.
+* [`lfi-bench`](https://github.com/lfi-project/lfi-bench): a collection of libraries and benchmarks for doing lfi performance evaluation.
 
 # Getting Started
 
