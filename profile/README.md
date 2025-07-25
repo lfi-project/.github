@@ -16,12 +16,13 @@ libraries (including assembly code) and device drivers.
 LFI aims for the following goals:
 
 - Compatibility: LFI can be used to sandbox nearly all existing C/C++/assembly
-  code unmodified, works with existing system call interfaces, etc.
+  libraries unmodified (they just need to be recompiled). Sandboxed libraries work with existing system call interfaces, and
+  are compatiable with existing development tools such as profilers, debuggers, and santizers.
 - Performance: LFI aims for minimal overhead vs. unsandboxed code.
 - Security: The LFI runtime and compiler elements aim to be simple and
   verifiable when possible. 
-- Usability: The tools should make it as easy as possible to retrofit
-  sandboxing in existing code.
+- Usability: LFI aims to make it easy as possible to used retrofit sandboxing, i.e., to
+  migrate from unsandboxed to sandboxed libraries with minimal effort.
    
 Non-goals include a stable binary format and platform independence. We will use
 whatever architecture-specific hardware features and compiler techniques we can
