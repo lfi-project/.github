@@ -8,8 +8,7 @@ LFI is a system for sandboxing native code. Like
 [WebAssembly](https://webassembly.org/)  and [Native
 Client](https://en.wikipedia.org/wiki/Google_Native_Client), LFI isolates
 sandboxed code in-process (i.e., in the same address space as a host
-application). At present, we support Arm64 and x86-64 targets, and have
-experimental RISC-V support.
+application).
 
 LFI is designed from the ground up to sandbox existing code, such as C/C++
 libraries (including assembly code) and device drivers. 
@@ -33,7 +32,8 @@ native code when sandboxing reads and writes, and 1.5% (Arm64) or 6% (x86-64)
 overhead when only sandboxing writes (geomean on SPEC 2017). LFI context
 switches (i.e. between sandbox and host application) take only 10s of cycles,
 and LFI can support thousands of sandboxes in a single address space: ~64K
-(Arm64) or ~3K (x86-64), with each sandbox given up to 4GiB of memory. 
+(Arm64) or ~3K (x86-64), with each sandbox given up to 4GiB of memory.  At present, 
+we support Arm64 and x86-64 targets, RISC-V support is still experimental.
 
 # Repositories
 
