@@ -45,8 +45,9 @@ we support Arm64 and x86-64 targets, RISC-V support is still experimental.
 * [`lfi-llvm-toolchain`](https://github.com/lfi-project/lfi-llvm-toolchain): scripts for building an LLVM-based LFI compiler toolchain, along with a sysroot including compiler-rt, musl, libc++, and mimalloc.
 * [`llvm-project`](https://github.com/lfi-project/llvm-project): our development fork of the LLVM project.
 * [`lfi-specification`](https://github.com/lfi-project/lfi-specification): the LaTeX sources for the LFI specification document.
-* [`lfi-bench`](https://github.com/lfi-project/lfi-bench): a collection of libraries and benchmarks for doing lfi performance evaluation.
-
+* [`lfi-bench`](https://github.com/lfi-project/lfi-bench): a collection of libraries and benchmarks for doing LFI performance evaluation.
+* [`lfi-examples`](https://github.com/lfi-project/lfi-examples): end-2-end examples of LFI sandboxed libraries using lfi-bind and rlbox.
+  
 # Getting Started
 
 To get started with LFI, you'll need an LFI compiler. You can get one from
