@@ -17,7 +17,7 @@ LFI aims for the following goals:
 
 - Compatibility: LFI can be used to sandbox nearly all existing C/C++/assembly
   libraries unmodified (they just need to be recompiled). Sandboxed libraries work with existing system call interfaces, and
-  are compatiable with existing development tools such as profilers, debuggers, and santizers.
+  are compatible with existing development tools such as profilers, debuggers, and sanitizers.
 - Performance: LFI aims for minimal overhead vs. unsandboxed code.
 - Security: The LFI runtime and compiler elements aim to be simple and
   verifiable when possible. 
