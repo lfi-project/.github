@@ -21,7 +21,7 @@ LFI aims for the following goals:
 - Performance: LFI aims for minimal overhead vs. unsandboxed code.
 - Security: The LFI runtime and compiler elements aim to be simple and
   verifiable when possible. 
-- Usability: LFI aims to make it easy as possible to used retrofit sandboxing, i.e., to
+- Usability: LFI aims to make it as easy as possible to retrofit sandboxing, i.e., to
   migrate from unsandboxed to sandboxed libraries with minimal effort.
    
 Non-goals include a stable binary format and platform independence. We will use
